@@ -241,7 +241,7 @@ function showLogin(){
   el.innerHTML=`<form class="box" id="loginF">${MASCOT('').replace('<svg','<svg width="120" height="126"')}<h2>${I('leaf')}เข้าสู่ระบบ</h2><p class="sub" style="margin:0 0 10px">สำหรับผู้ประสานงานสมาคมการค้าอาหารอนาคตไทย</p>
   <input id="lgEmail" type="email" autocomplete="username" value="admin@thaifuturefood.org" aria-label="อีเมล" required style="letter-spacing:0;font:16px 'IBM Plex Sans Thai';text-align:left;padding:0 16px">
   <input id="lgPw" type="password" autocomplete="current-password" placeholder="รหัสผ่าน" aria-label="รหัสผ่าน" required autofocus style="letter-spacing:0;font:16px 'IBM Plex Sans Thai';text-align:left;padding:0 16px">
-  <p class="err" id="lgErr"></p><button class="btn pri" style="width:100%;justify-content:center">เข้าสู่ระบบ</button></form>`;
+  <p class="err" id="lgErr"></p><button class="btn pri" style="width:100%;justify-content:center">เข้าสู่ระบบ</button><p class="note" style="margin-top:14px">ยังไม่มีบัญชี? <a href="demo.html" style="color:var(--pinkD);font-weight:600">ลองใช้โหมดสาธิต (ข้อมูลตัวอย่าง)</a></p></form>`;
   document.body.appendChild(el);
   $('#loginF').onsubmit=async e=>{e.preventDefault();const err=$('#lgErr');err.textContent='กำลังเข้าสู่ระบบ…';
     const{data,error}=await sb.auth.signInWithPassword({email:$('#lgEmail').value.trim(),password:$('#lgPw').value});
